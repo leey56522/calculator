@@ -71,13 +71,13 @@ function funcProcess(e) {
 
 // Setting up stage for next operation
 function ReadyforNext(ab, e) {
-    // if (ab.toString() >= 11) {
-    //     if (ab < 0 || ab > 1) {
-    //         ab = ab.toExponential();
-    //     } else {
-    //         console.log('hi');
-    //     };
-    // };
+    if (ab.toString().length >= 11) {
+        if (ab < 0 || ab > 1) {
+            ab = ab.toExponential(2);
+        } else {
+            ab = Number.parseFloat(ab).toFixed(9);
+        };
+    };
     currentVal = ab.toString();
     display.innerHTML = ab;
     a = currentVal;
